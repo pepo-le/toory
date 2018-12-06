@@ -1,0 +1,401 @@
+@media (min-width: 1200px) {
+    .p-content {
+        margin-left: 270px;
+    }
+}
+
+.p-nav {
+    border: none;
+    background-color: transparent;
+    i {
+        margin-right: 0.4rem;
+        margin-top: -0.4rem;
+        font-size: 2rem;
+        vertical-align: middle;
+    }
+}
+
+.p-nav--header {
+    padding: 0.8rem 0 0.6rem;
+}
+
+@media (min-width: 767px) {
+    .p-nav--header {
+        padding: 1.6rem 0 1.2rem;
+    }
+}
+
+.p-top-logo {
+    float: left;
+    text-align: center;
+    padding: 0;
+    img {
+        height: 4rem;
+    }
+    a {
+        background-image: url("../img/logomark.png");
+        background-size: contain;
+        background-position: 50% 0;
+        background-repeat: no-repeat;
+        height: 40px;
+        width: 40px;
+        display: inline-block;
+    }
+}
+
+.p-nav-logo {
+    padding: 0;
+    margin-left: 0.4rem;
+    a {
+        background-image: url("../img/logomark.png");
+        background-size: contain;
+        background-position: 50% 0;
+        background-repeat: no-repeat;
+        height: 40px;
+        width: 40px;
+        display: inline-block;
+    }
+}
+
+@media (min-width: 600px) {
+    .p-nav-logo {
+        margin-left: 0.8rem;
+    }
+}
+
+.p-nav__title {
+    max-width: initial;
+    h1 {
+        display: inline;
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+}
+
+.p-nav__list {
+    > li {
+        border: none;
+    }
+    > li > a {
+        border:none;
+        background-color: transparent !important;
+    }
+}
+
+.p-nav__dropdown {
+    font-size: 1.2rem;
+}
+
+.p-nav-sub-list {
+    padding-left: 1rem;
+}
+
+@media (min-width: 1200px) {
+    .p-offcanvas {
+        display: initial;
+        position: initial;
+    }
+}
+
+.p-side-navi {
+    padding-top: 3rem;
+    background-color: #2c3e50;
+    font-size: 1.4rem;
+    font-weight: bold;
+    a {
+        color: #DDDDDD;
+    }
+    li {
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        margin-left: 1rem;
+        border-radius: 0.4rem;
+    }
+    i {
+        vertical-align: -8%;
+        width: 3.2rem;
+        font-size: 1.8rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .p-side-navi {
+        transform: translateX(0);
+    }
+}
+
+.p-side-navi__icon--square {
+    margin-left: -0.3rem;
+    padding-right: 0.3rem;
+}
+
+.p-side-navi__new-task {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    padding: 0.4rem;
+    border: 3px solid #ddd;
+    li {
+        margin-bottom: 0;
+    }
+}
+
+.p-side-navi__header {
+    margin-bottom: 2rem;
+    li {
+        padding-left: 0;
+    }
+    li > a {
+        margin-left: 10px;
+        padding: 0;
+    }
+    img {
+        height: 3.2rem;
+    }
+
+}
+
+.p-side-navi__footer {
+    margin-top: 4rem;
+}
+
+.p-side-navi-active {
+    background-color: #50667C;
+}
+
+.p-side-navi-parent-active {
+    > div {
+        height: auto !important;
+        display: block !important;
+        visibility: visible !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .p-offcanvas-toggle {
+        display: none;
+    }
+}
+
+.p-breadcrumbs {
+    margin-top: 1.6rem;
+    li {
+        font-size: 1.4rem;
+    }
+}
+
+.p-task {
+    margin-top: 2.4rem;
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 0;
+    }
+}
+
+.p-task-table {
+    margin-top: 0;
+    margin-bottom: 4rem;
+    font-size: 1.6rem;
+    tr {
+        border-bottom: 1px solid #ddd;
+
+    }
+    td {
+        border: none;
+        vertical-align: middle;
+    }
+    a {
+        color: #555555;
+    }
+}
+
+.p-task-table--small-text {
+    font-size: 1.4rem;
+}
+
+.p-task-table--center {
+    text-align: center;
+}
+
+.p-task-table__check-td {
+    width: 5%;
+    form {
+        min-width: 2.4rem;
+        max-width: 3rem;
+    }
+}
+
+.p-task-check {
+    position: relative;
+}
+
+.p-task-check__loading-inner {
+    position: relative;
+    top: -.2rem;
+    left: -.2rem;
+    width: 1.4rem !important;
+    height: 1.4rem !important;
+}
+
+.p-task-table__icon {
+    position: relative;
+    width: 2rem;
+
+    a {
+        float: right;
+        display: inline-block;
+        padding: 0.1rem 1rem;
+        text-align: center;
+        color: #888888;
+    }
+
+    &:hover > div {
+        visibility: visible;
+    }
+}
+
+.p-task-table__icon__control {
+    z-index: 100;
+    position: absolute;
+    visibility: hidden;
+    right: 3.2rem;
+    width: 4.8rem;
+    border: solid 1px #aaa;
+    background-color: #fff;
+    font-size: 1.4rem;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        color: #555555;
+    }
+
+    @media (min-width: 600px) {
+        width: 5.2rem;
+        font-size: 1.6rem;
+    }
+}
+
+.p-task-table__none td {
+    padding-left: calc(2rem + 1%);
+}
+
+.p-task-table--list {
+    margin-bottom: 0;
+    th:first-child, td:first-child {
+        padding-left: calc(1rem + 2%);
+    }
+}
+
+.p-task-table__delete-check {
+    width: 5%;
+    text-align: right;
+
+    @media (min-width: 600px) {
+        & input {
+            margin-right: .8rem;
+        }
+    }
+}
+
+.p-delete-collectively-check {
+    text-align: right;
+
+    input {
+        margin-left: .4rem;
+    }
+
+}
+
+.p-task-detail {
+    font-size: 1.4rem;
+    dt {
+        float:left;
+        min-width: 12rem;
+    }
+    dd {
+        margin-left: 12rem;
+    }
+}
+
+@media (min-width: 600px) {
+    .p-task-detail {
+        dd {
+            margin-left: 160px;
+        }
+    }
+}
+
+.p-task-detail__color {
+    display: inline-block;
+    width: 2rem;
+    height: 1rem;
+    text-align: middle;
+}
+
+.p-delete-collectively {
+    text-align: right;
+    font-size: 1.4rem;
+
+    & > input {
+        display: inline;
+        font-size: 1.2rem;
+    }
+
+    @media (min-width: 600px) {
+        font-size: 1.6rem;
+    }
+}
+
+.p-history-header {
+    position: relative;
+    height: 12rem;
+}
+
+.p-history-header__inner {
+    position: absolute;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    top: 0;
+    left: calc(50% - 1.4rem);
+}
+
+.p-chart-control {
+    text-align: center;
+}
+.p-chart {
+    height: 100% !important;
+    margin: auto;
+}
+.p-chart-wrap {
+    height: 70vh;
+}
+
+.p-email-activation {
+    margin-top: 0.6rem !important;
+}
+
+@media (min-width: 600px) {
+    .p-history-header {
+        position: relative;
+        height: initial;
+    }
+
+    .p-history-header__inner {
+        position: initial;
+        writing-mode: initial;
+        text-orientation: initial;
+        top: initial;
+        left: initial;
+    }
+}
+
+.p-footer {
+    a {
+        color: #444444;
+    }
+}

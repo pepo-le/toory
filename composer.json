@@ -1,0 +1,15 @@
+{
+    "name": "pepo-le/example-app",
+    "require": {
+        "cakephp/cakephp": "2.*",
+        "cakedc/migrations": "~2.3",
+        "abraham/twitteroauth": "0.7.3"
+    },
+    "require-dev": {
+        "cakephp/debug_kit": "2.2.*",
+        "phpunit/phpunit": "3.*"
+    },
+    "config": {
+        "vendor-dir": "Vendor/"
+    }
+}

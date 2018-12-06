@@ -1,0 +1,71 @@
+#!/bin/bash
+# rsyncのオプション
+RSYNC_OPTIONS='-azv -c --force --delete'
+
+# コピー元のディレクトリ
+SRC_DIR='./'
+# デプロイ対象外にするファイル（空白区切り）
+# デプロイ先のログは残す
+EXCLUDES='.DS_Store .git .svn /Assets /tmp/logs /Test /webroot/test.php /Vendor/phpunit /Plugin/DebugKit'
+
+# ホスト情報
+# デプロイ先のサーバー名
+HOST='192.168.255.1'
+# 接続ユーザー
+DEPLOY_USER='username'
+# ポート番号
+PORT='22'
+# 秘密鍵
+IDENTITY_FILE='~/.ssh/example/id_rsa'
+
+# デプロイ先のディレクトリ
+DST_DIR='/web/toory'
+
+# 環境変数
+# TOORY=productionで本番環境
+ENV='TOORY=production'
+
+# ユーザー情報
+LOCAL_USER='username'
+REMOTE_USER='username'
+
+EXCLUDE_OPTION=""
+for EXCLUDE in $EXCLUDES; do
+    EXCLUDE_OPTION=$EXCLUDE_OPTION" --exclude="$EXCLUDE
+done;
+
+# Gitのブランチ切り替え
+#git checkout release &&
+
+(
+    # tmpの削除
+    # ファイルが無い場合はエラーが出るが問題なし
+    TMP_DIR='./tmp'
+    rm $TMP_DIR/sessions/*
+    rm $TMP_DIR/logs/*
+    rm $TMP_DIR/cache/models/*
+    rm $TMP_DIR/cache/persistent/*
+    rm $TMP_DIR/cache/views/*
+    rm $TMP_DIR/cache/cake*
+    rm -r $TMP_DIR/tests
+
+    # 引数execでデプロイ、それ以外でdry-run
+    # WindowsではWSLを使う。/home/<user>/.ssh に鍵を置いておく
+    CMD=$1
+    case $CMD in
+        exec)
+            rsync $RSYNC_OPTIONS --progress -e "sudo -u $LOCAL_USER ssh -l $REMOTE_USER -p $PORT -i $IDENTITY_FILE" $EXCLUDE_OPTION $SRC_DIR $DEPLOY_USER@$HOST:$DST_DIR --rsync-path='sudo rsync' &&
+            # パーミッションの変更
+            sudo -u $LOCAL_USER ssh -l $REMOTE_USER $DEPLOY_USER@$HOST -p $PORT -i $IDENTITY_FILE "cd $DST_DIR &&
+                find ./ -type d -print | xargs chmod 770 ;
+                find ./ -path ./tmp -prune -o -type f -print0 | xargs -0 chmod 660 ;
+                chmod 770 ./Console/cake ;
+                ls -l"
+            # 環境変数の追加
+            ssh -t $DEPLOY_USER@$HOST -p $PORT -i $IDENTITY_FILE "echo export $ENV | sudo tee -a /etc/apache2/envvars && sudo systemctl restart apache2"
+        ;;
+        *)
+            rsync $RSYNC_OPTIONS --dry-run -e "sudo -u $LOCAL_USER ssh -l $REMOTE_USER -p $PORT -i $IDENTITY_FILE" $EXCLUDE_OPTION $SRC_DIR $DEPLOY_USER@$HOST:$DST_DIR --rsync-path='sudo rsync'
+        ;;
+    esac
+)

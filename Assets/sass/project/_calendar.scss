@@ -1,0 +1,250 @@
+.p-calendar {
+    ul {
+        overflow: hidden;
+    }
+    li {
+        display: inline-block;
+        &:first-child {
+            margin-right: 2%;
+        }
+    }
+}
+
+@media (min-width: 800px) {
+    .p-calendar {
+        font-size: 1.4rem;
+    }
+}
+
+.p-calendar__table {
+    border: 1px solid #aaa;
+    thead td {
+        font-size: 1.6rem;
+        border: none;
+        vertical-align: middle;
+    }
+    th {
+        font-size: 1.6rem;
+        border: 1px solid #aaa;
+        border-left-style: none;
+    }
+    i {
+        margin-left: 1rem;
+        color: #444;
+    }
+    a {
+        color: #444;
+    }
+}
+
+.p-calendar__table__header {
+    height: 5rem !important;
+    span {
+        display: inline-block;
+        margin-left: 3%;
+        line-height: 3.2rem;
+        font-size: 1.4rem;
+        vertical-align: middle;
+    }
+    a {
+        display: inline-block;
+        margin-left: 1.6rem;
+    }
+    a:last-child {
+        margin-left: 2rem;
+    }
+}
+
+@media (min-width: 600px) {
+    .p-calendar__table__header {
+        span {
+            font-size: 1.6rem;
+        }
+    }
+}
+
+.p-calendar__table__header__arrow {
+    i {
+        width: 2rem;
+        height: 2rem;
+        margin-left: 0;
+        line-height: 2rem;
+        font-size: 1.4rem;
+        vertical-align: middle;
+        text-align: center;
+        border-radius: 50%;
+    }
+    i:hover {
+        background-color: #ccc;
+    }
+    i:before {
+        display: block;
+        margin-top: -0.1rem;
+    }
+}
+
+@media (min-width: 600px) {
+    .p-calendar__table__header__arrow {
+        i {
+            width: 2.8rem;
+            height: 2.8rem;
+            line-height: 2.8rem;
+            font-size: 2rem;
+        }
+    }
+}
+
+.p-calendar__table__header__arrow--left {
+    i:before {
+        margin-left: -0.3rem;
+    }
+}
+
+.p-calendar__table__header__arrow--right {
+    i:before {
+        margin-left: 0.1rem;
+    }
+}
+
+.p-calendar__table__header__today-link {
+    font-size: 1.2rem;
+}
+
+.p-calendar__table__day-cell {
+    box-sizing: border-box;
+    width: 14.2857%;
+    height: 5.6rem;
+    padding: 0 !important;
+    border: 1px solid #aaa;
+    border-top-style: none;
+    border-left-style: none;
+    font-size: 1.2rem;
+    i {
+        margin-left: 0;
+        margin-right: 0.8rem;
+    }
+    a {
+        display: block;
+        width: 95%;
+        height: 95%;
+        outline: none;
+    }
+}
+
+@media (min-width: 600px) {
+    .p-calendar__table__day-cell {
+        height: 10.4rem;
+        padding: 8px !important;
+    }
+}
+
+@media (min-width: 800px) {
+    .p-calendar__table__day-cell {
+        height: 8rem;
+        font-size: 1.4rem;
+    }
+}
+
+.p-calendar__table__day-cell__left {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 0.4rem;
+    margin-right: 0.4rem;
+}
+@media (min-width: 600px) {
+    .p-calendar__table__day-cell__left {
+        margin-top: initial;
+        margin-left: initial;
+    }
+}
+
+@media (min-width: 800px) {
+    .p-calendar__table__day-cell__left {
+        float: left;
+    }
+}
+
+.p-calendar__table__day-text {
+    display: none;
+}
+
+.p-calendar__table__day-cell__right {
+    display: none;
+}
+
+@media (min-width: 600px) {
+    .p-calendar__table__day-cell__right {
+        display: block;
+    }
+}
+
+@media (min-width: 800px) {
+    .p-calendar__table__day-cell__right {
+        float: left;
+    }
+}
+
+.p-calendar__table__day {
+    margin-right: 0.8rem;
+    font-family: Roboto,"Noto Sans JP",Helvetica,Arial,sans-serif;
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+@media (min-width: 800px) {
+    .p-calendar__table__day {
+        font-size: 1.6rem;
+    }
+}
+
+.p-calendar__table__day-cell--today {
+    .p-calendar__table__day-cell__left span {
+        display: inline-block;
+        width: 2.2rem;
+        height: 2.2rem;
+        margin-top: -0.4rem;
+        margin-right: 0.4rem;
+        margin-left: -0.4rem;
+        line-height: 2.2rem;
+        color: #fff;
+        background-color: #4285F4;
+        text-align: center;
+        border-radius: 50%;
+    }
+}
+
+@media (min-width: 800px) {
+    .p-calendar__table__day-cell--today {
+        .p-calendar__table__day-cell__left span {
+            width: 2.8rem;
+            height: 2.8rem;
+            line-height: 2.8rem;
+        }
+    }
+}
+
+.p-calendar__td--rate100 {
+    background-color: #dff;
+}
+
+.p-calendar__td--rate50 {
+    background-color: #dfc;
+}
+
+.p-calendar__td--rate1 {
+    background-color: #ffc;
+}
+
+.p-calendar__td--rate0 {
+    background-color: #fdd;
+}
+
+.p-calendar__note {
+    display: none;
+}
+
+@media (min-width: 600px) {
+    .p-calendar__note {
+        display: block;
+    }
+}

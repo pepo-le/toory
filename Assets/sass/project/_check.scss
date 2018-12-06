@@ -1,0 +1,66 @@
+.p-task-check__input {
+    display: none;
+}
+
+.p-task-check__label {
+    position: relative;
+    display: inline-block;
+    top: -.7rem;
+    font-size: 2rem;
+    color: #666666;
+    cursor: pointer;
+}
+
+.p-task-check__label .p-task-check__checkmark {
+    position: absolute;
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    margin-right: .5rem;
+    border: 1px solid #888888;
+    border-radius: 20%;
+    box-sizing: border-box;
+    transform: translateY(-50%);
+}
+
+.p-task-check__checkmark:before {
+    content: '';
+    position: absolute;
+    bottom: 25%;
+    left: 45%;
+    font-size: 0;
+    width: .25em;
+    height: .5em;
+    background-color: currentColor;
+    transform-origin: center bottom;
+    transform:  translateX(-50%) scaleX(-1) rotate(-135deg) translateY(.5em); 
+}
+
+.p-task-check__checkmark:after{
+    content: '';
+    position: absolute;
+    bottom: 25%;
+    left: 45%;
+    font-size: 0;
+    width: .18em;
+    height: .92em;
+    background-color: currentColor;
+    transform-origin: center bottom;
+    transform: translateX(-50%) rotate(45deg) translate(.05em,.125em);
+}
+
+.p-task-check__input.checked + .p-task-check__label .p-task-check__checkmark:before{
+    font-size: 2rem;
+    animation: check_anim .1s linear both;
+}
+.p-task-check__input.checked + .p-task-check__label .p-task-check__checkmark:after{
+    font-size: 2rem;
+    animation: check_anim .1s .1s linear both;
+}
+
+
+@keyframes check_anim{
+    from{
+        height: 0;
+    }
+}

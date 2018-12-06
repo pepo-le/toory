@@ -1,0 +1,19 @@
+.vimsessions
+
+.DS_Store
+node_modules
+/logs
+.sass-cache
+
+# Composer
+/Vendor/*
+
+# CakePHP 2
+/tmp/*
+/Plugin/*
+
+# Others
+/deploy.sh
+/Config/env.php
+/Config/env_dev.php
+/Console/cake_reminder.php

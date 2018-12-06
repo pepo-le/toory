@@ -1,0 +1,44 @@
+/**
+ * Copyright (c) 2016 Connor Atherton
+ *
+ * All animations must live in their own file
+ * in the animations directory and be included
+ * here.
+ *
+ */
+/**
+ * Styles shared by multiple animations
+ */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg); }
+  50% {
+    transform: rotate(180deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+.c-loading > div, .c-loading > span {
+  visibility: hidden;
+  background-color: #fff;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  margin: 2px;
+  animation-fill-mode: both;
+  border: 2px solid #aaa;
+  border-bottom-color: transparent;
+  height: 2rem;
+  width: 2rem;
+  background: transparent !important;
+  display: inline-block;
+  animation: rotate 0.75s 0s linear infinite; }
+
+.c-loading--top {
+  position: relative;
+  top: -1rem;}
+
+.c-loading--cover {
+  position: absolute;}
+
+.c-loading--show > div, .c-loading--show > span {
+  visibility: visible;}
